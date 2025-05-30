@@ -1,0 +1,37 @@
+version: "3.1"
+nlu:
+- intent: book_flight
+  examples: |
+    - أريد حجز رحلة من [الدار البيضاء](ville_depart) إلى [إسطنبول](ville_destination) يوم [5 يوليو](date_depart) درجة [اقتصادية](classe) [ذهاب وإياب](type)
+    - احجز لي طائرة من [الرباط](ville_depart) إلى [باريس](ville_destination) يوم [12 يونيو](date_depart) والعودة يوم [20 يونيو](date_retour) درجة [رجال أعمال](classe) [ذهاب فقط](type)
+    - أريد السفر من [طنجة](ville_depart) إلى [القاهرة](ville_destination) يوم [1 أغسطس](date_depart) درجة [اقتصادية](classe) [ذهاب فقط](type)
+
+- intent: book_hotel
+  examples: |
+    - أريد فندقًا من [4](catégorie) نجوم في [مراكش](ville)، حي [كليز](quartier)، ل[شخصين](nombre_personnes)
+    - هل يوجد فندق [5](catégorie) نجوم في [طنجة](ville) ل[شخص واحد](nombre_personnes)؟
+    - احجز لي فندق [3](catégorie) نجوم في [أغادير](ville)، حي [فونتي](quartier)، ل[ثلاثة أشخاص](nombre_personnes)
+
+- intent: select_option
+  examples: |
+    - سأختار هذا
+    - أريد العرض الثاني
+    - هذا يبدو مناسبًا
+
+- intent: change_option
+  examples: |
+    - غير المدينة إلى [فاس](ville)
+    - أريد تغيير التاريخ إلى [15 يوليو](date_depart)
+    - بدل الرحلة إلى [طنجة](ville_destination)
+
+- intent: confirm_reservation
+  examples: |
+    - نعم، احجز الآن
+    - أؤكد الحجز، شكرًا
+    - أريد تأكيد هذا العرض
+
+- intent: goodbye
+  examples: |
+    - وداعاً
+    - إلى اللقاء
+    - أراك لاحقاً
