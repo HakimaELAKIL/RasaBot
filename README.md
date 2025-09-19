@@ -1,27 +1,46 @@
-🧠 Projet Rasa – Assistant Intelligent (Réservation de Vols)
+# 🧠 Rasa Project – Intelligent Assistant (Flight Booking)
 
-Ce projet met en place un assistant conversationnel basé sur Rasa
-.
-Il est conçu pour aider les utilisateurs à réserver un vol en comprenant leurs demandes en langage naturel et en guidant l’interaction étape par étape.
+> A smart conversational assistant built with [Rasa](https://rasa.com/) to help users **book flights** and understand their requests step by step in natural language.
 
-🎯 Objectifs du projet
+---
 
-Permettre aux utilisateurs de chercher et réserver un vol (ville de départ, ville d’arrivée, date, nombre de passagers…).
+## 🎯 Project Goals
+- Enable users to **search and book a flight** (departure city, arrival city, date, number of passengers…)
+- **Recognize intents and entities** related to booking (e.g. `book_flight`, `departure_city`, `arrival_city`, `date`, `passengers`)
+- Guide the user with **contextual questions** to complete missing information
+- Integrate **custom actions** to connect to flight services or APIs
+- Provide **natural and contextual answers** in English or Arabic
 
-Reconnaître les intentions et entités liées à la réservation (par ex. : book_flight, departure_city, arrival_city, date, passengers).
+---
 
-Guider l’utilisateur avec des questions contextuelles pour compléter les informations manquantes.
+## 🗂 Project Structure
+```bash
+├── actions/              # Custom Python actions (API calls, business logic)
+├── data/                 # Training data (intents: book_flight, cancel_flight …)
+├── domain.yml            # Intents, entities, slots, responses, actions
+├── endpoints.yml         # Endpoints configuration (API, tracker store)
+├── credentials.yml       # Channels configuration (REST, Telegram, Slack …)
+├── models/               # Trained models
+├── tests/                # Automated test scenarios
+└── README.md             # Project documentation
+```
+## ⚙️ Running the Project
+- Train the model
+```bash
+rasa train
+```
 
-Intégrer des actions personnalisées pour se connecter à un service ou une API de vols.
+- Run the main server
+```bash
+rasa run
+```
 
-Fournir des réponses naturelles et contextualisées.
+- Run the custom actions server
+```bash
+rasa run actions
+```
 
-🗂 Structure du projet
-├── actions/              # Actions personnalisées en Python (connexion à une API de vols)
-├── data/                 # Données d'entraînement (intents book_flight, cancel_flight…)
-├── domain.yml            # Intents, entités, slots, réponses, actions
-├── endpoints.yml         # Configuration des endpoints (API, tracker store)
-├── credentials.yml       # Canaux d'intégration (REST, Telegram, Slack…)
-├── models/               # Modèles entraînés
-├── tests/                # Scénarios de test automatisés
-└── README.md             # Documentation du projet
+- Test the assistant in the shell
+```bash
+rasa shell
+```
