@@ -1,17 +1,27 @@
-#  Projet Rasa - Assistant Intelligent
+🧠 Projet Rasa – Assistant Intelligent (Réservation de Vols)
 
-Ce projet est une implémentation d’un assistant conversationnel utilisant [Rasa](https://rasa.com/), un framework open source pour le traitement du langage naturel (NLP) et les dialogues basés sur l’apprentissage machine.
+Ce projet met en place un assistant conversationnel basé sur Rasa
+.
+Il est conçu pour aider les utilisateurs à réserver un vol en comprenant leurs demandes en langage naturel et en guidant l’interaction étape par étape.
 
----
+🎯 Objectifs du projet
 
-##  Structure du projet
+Permettre aux utilisateurs de chercher et réserver un vol (ville de départ, ville d’arrivée, date, nombre de passagers…).
 
-```bash
-├── actions/              # Actions personnalisées (Python)
-├── data/                 # Données d'entraînement (nlu.yml, stories.yml, rules.yml)
-├── domain.yml            # Définition des intentions, entités, réponses, actions...
-├── endpoints.yml         # Configuration des endpoints pour actions, tracker store, etc.
-├── credentials.yml       # Configuration des canaux (e.g. REST, Telegram, etc.)
-├── models/               # Modèles entraînés (générés localement, non suivis par Git)
-├── tests/                # Scénarios de test
-└── README.md             # Ce fichier
+Reconnaître les intentions et entités liées à la réservation (par ex. : book_flight, departure_city, arrival_city, date, passengers).
+
+Guider l’utilisateur avec des questions contextuelles pour compléter les informations manquantes.
+
+Intégrer des actions personnalisées pour se connecter à un service ou une API de vols.
+
+Fournir des réponses naturelles et contextualisées.
+
+🗂 Structure du projet
+├── actions/              # Actions personnalisées en Python (connexion à une API de vols)
+├── data/                 # Données d'entraînement (intents book_flight, cancel_flight…)
+├── domain.yml            # Intents, entités, slots, réponses, actions
+├── endpoints.yml         # Configuration des endpoints (API, tracker store)
+├── credentials.yml       # Canaux d'intégration (REST, Telegram, Slack…)
+├── models/               # Modèles entraînés
+├── tests/                # Scénarios de test automatisés
+└── README.md             # Documentation du projet
